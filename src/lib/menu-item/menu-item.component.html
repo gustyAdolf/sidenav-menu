@@ -1,0 +1,42 @@
+<mat-accordion class="nav" #accordion="matAccordion">
+  <mat-expansion-panel *ngIf="item.children && item.children.length"
+                       (expandedChange)="whenExpanded()" hideToggle>
+    <mat-expansion-panel-header >
+      <p>
+        <mat-icon mat-list-icon
+                  [matTooltip]="!isExpandedMenu ? item.name : '' "
+                  matTooltipPosition="right">
+          {{item.icon}}
+        </mat-icon>
+        <span *ngIf="isExpandedMenu">{{item.name}}</span>
+      </p>
+      <span class="row-span"></span>
+      <mat-icon *ngIf="isExpandedMenu && !item.routing" [@indicatorRotate]="rotateIndicator ? 'expanded': 'collapsed'">
+        chevron_right
+      </mat-icon>
+    </mat-expansion-panel-header>
+
+    <div *ngIf="isExpandedMenu" [ngClass]="{'depth1': depth+1 === 1, 'depth2': depth+1 === 2}">
+      <app-menu-item *ngFor="let child of item.children" [item]="child"
+                     [isExpandedMenu]="isExpandedMenu" [depth]="depth+1"></app-menu-item>
+    </div>
+
+  </mat-expansion-panel>
+
+  <div *ngIf="item.routing">
+    <div routerLinkActive="active-link"
+         routerLink="{{item.routing}}"
+         class="routing-item"
+         [ngClass]="{'depth1': depth === 1}">
+
+      <mat-icon mat-list-icon
+                [matTooltip]="!isExpandedMenu ? item.name : '' "
+                matTooltipPosition="right">
+        {{item.icon}}
+      </mat-icon>
+      <span *ngIf="isExpandedMenu">{{item.name}}</span>
+    </div>
+  </div>
+
+
+</mat-accordion>

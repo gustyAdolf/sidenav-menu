@@ -1,0 +1,23 @@
+{
+  "name": "sidenav-menu",
+  "version": "0.0.1",
+  "description": "Menu sidenav con angular material",
+  "peerDependencies": {
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0"
+  },
+  "homepage": "https://github.com/gustyAdolf/sidenav-menu#readme",
+  "bugs": {
+    "url": "https://github.com/gustyAdolf/sidenav-menu/issues",
+    "email": "gustyadolf@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Gustavo A. Ramírez Franco",
+    "email": "gustyadolf@gmail.com",
+    "url": "https://github.com/gustyAdolf"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

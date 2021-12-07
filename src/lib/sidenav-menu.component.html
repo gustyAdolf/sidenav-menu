@@ -1,0 +1,8 @@
+<section [class.sidenav]="isExpanded">
+  <div class="toggle">
+    <mat-icon (click)="toggleMenu.emit(isExpanded)">
+      {{ isExpanded ? "keyboard_backspace" : "dehaze" }}
+    </mat-icon>
+  </div>
+  <app-menu-item *ngFor="let item of menu" [item]="item" [isExpandedMenu]="isExpanded"></app-menu-item>
+</section>

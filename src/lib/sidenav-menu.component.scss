@@ -1,0 +1,12 @@
+.sidenav {
+  width: 250px;
+}
+.toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
